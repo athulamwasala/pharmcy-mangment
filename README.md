@@ -20,8 +20,10 @@ Installation
 Usage
 
 .URL: http://127.0.0.1:8000
-.To execute from the command line, navigate to the application  folder and run:
+.To execute from the command line, navigate to the application  folder and
+  run:   
   php artisan serve
+  
   The application can then be accessed from http://127.0.0.1:8000/
   
   User Credentials
