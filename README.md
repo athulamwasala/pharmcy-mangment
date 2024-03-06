@@ -2,9 +2,13 @@ Pharmacy Management System
 
 Installation
 1.git clone https://github.com/athulamwasala/pharmcy-mangment.git
+
 2.Application files are located in the htdocs folder in XAMPP or /var/www/html in a Linux nvironment. Ensure full permissions are granted to the root folder in Linux.
+
 3.Update the database credentials (username and password) in the .env file.
+
 4.Run the following commands:
+
     composer install
     php artisan vendor:publish --provider="Laravel\Sanctum\SanctumServiceProvider"
     php artisan migrate
@@ -15,10 +19,10 @@ Installation
 Usage
 
 .URL: http://127.0.0.1:8000
-.To execute from the command line, navigate to the application folder and run:
+.To execute from the command line, navigate to the application  folder and run:
   php artisan serve
-  The application can then be accessed from http://127.0.0.1:8000/api
-
+  The application can then be accessed from http://127.0.0.1:8000/
+  
   User Credentials
      Owner:
     Username: owner
