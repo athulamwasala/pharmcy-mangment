@@ -1,6 +1,7 @@
 Pharmacy Management System
 
 Installation
+
 1.git clone https://github.com/athulamwasala/pharmcy-mangment.git
 
 2.Application files are located in the htdocs folder in XAMPP or /var/www/html in a Linux nvironment. Ensure full permissions are granted to the root folder in Linux.
