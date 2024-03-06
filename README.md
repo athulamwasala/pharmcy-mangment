@@ -59,4 +59,22 @@ Usage
     Postman Collection
 
     Url:  https://api.postman.com/collections/311122-9fb7eac1-2ea7-488a-b4e6-785b9fecc3a7?access_key=PMAT-01HRAEK9A2QHHZBT8KZX4MZCWR
+
+    Postman Authentication Token Script
+
+    To automate the authentication token setup in Postman, follow these steps:
+    1.Send a POST request to the login endpoint to obtain the token
+      URL: http://127.0.0.1:8000/api/login
+    2.In the Tests tab of the login request, add the following JavaScript code:
+
+        var object = JSON.parse(responseBody);
+        pm.environment.set('token', object.token);
+
+    3.This script will automatically set the authentication token in the Postman local environment variable after a successful login request.
+      Subsequent requests will use this token for authentication without 
+     manual intervention.
+
+    
+
+    
    
