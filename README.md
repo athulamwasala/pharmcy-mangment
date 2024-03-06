@@ -71,8 +71,7 @@ Usage
         pm.environment.set('token', object.token);
 
     3.This script will automatically set the authentication token in the Postman local environment variable after a successful login request.
-      Subsequent requests will use this token for authentication without 
-     manual intervention.
+      Subsequent requests will use this token for authentication without manual intervention.
 
     
 
