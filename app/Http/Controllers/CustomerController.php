@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Response;
 
 class CustomerController extends Controller
 {
+    /**
+     * Display a listing of the customers.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function index()
     {  
         $this->authorize('viewAny', Customer::class);
@@ -16,6 +21,12 @@ class CustomerController extends Controller
         return Customer::all();
     }
     
+    /**
+     * Store a newly created customer in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
     public function store(Request $request)
     {
         $this->authorize('create', Customer::class);
@@ -30,6 +41,12 @@ class CustomerController extends Controller
         return Customer::create($request->all());
     }
     
+    /**
+     * Display the specified customer.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
         $customer = Customer::findOrFail($id);
@@ -38,6 +55,13 @@ class CustomerController extends Controller
         return $customer;
     }
     
+    /**
+     * Update the specified customer in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function update(Request $request, $id)
     {
         $customer = Customer::findOrFail($id);
@@ -55,6 +79,12 @@ class CustomerController extends Controller
         return $customer;
     }
     
+    /**
+     * Remove the specified customer from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function destroy($id)
     {
         $customer = Customer::findOrFail($id);
@@ -62,9 +92,15 @@ class CustomerController extends Controller
     
         $customer->forceDelete();
     
-        return Response::json(['message' => 'Medication deleted successfully'], 204);
+        return Response::json(['message' => 'Customer deleted successfully'], 204);
     }
     
+    /**
+     * Soft delete the specified customer.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function softDelete($id)
     {
         $customer = Customer::findOrFail($id);
@@ -72,7 +108,7 @@ class CustomerController extends Controller
 
         $customer->delete();
     
-        return Response::json(['message' => 'Medication deleted successfully'], 200);
+        return Response::json(['message' => 'Customer soft deleted successfully'], 200);
     }
       
 }
